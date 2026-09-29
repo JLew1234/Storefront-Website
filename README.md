@@ -11,18 +11,26 @@ Phase 1 - Initial Setup
 Create the basic website structure
 Add the home page
 Establish the initial GitHub repository
+
 Phase 2 - Core Features
 
 Develop the main website content
 Add navigation
 Create the primary features of the website
+
 Phase 3 - Design and Usability
 
 Improve the visual design
 Make the website responsive
 Improve usability and accessibility
+
 Phase 4 - Testing and Launch
 
 Test website functionality
 Fix errors and make improvements
 Prepare the website for launch
+
+Phase 5 - Launch the website
+create a local stoarge
+Iron out any and all noticeable issues
+Launch the website 
