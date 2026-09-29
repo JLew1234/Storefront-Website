@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Supplies - NurturePath Lactation Services</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Supplies & Services</h1>
+    </header>
+    
+    <nav>
+        <a href="index.html">Homepage</a>
+        <a href="services.html">Consultations & Services</a>
+        <a href="shop.html">Shop Supplies</a>
+        <a href="checkout.html">Checkout</a>
+    </nav>
+
+    <main class="container shop-layout">
+        <!-- Products Grid Area -->
+        <section class="products-section">
+            <h2>Available Services & Products</h2>
+            <div id="product-container" class="product-grid"></div>
+        </section>
+
+        <!-- Dynamic Cart Sidebar -->
+        <aside class="cart-sidebar">
+            <h3>Your Cart</h3>
+            <div id="sidebar-cart-items">
+                <!-- JavaScript injects cart here -->
+            </div>
+            <hr>
+            <div class="cart-total-box">
+                Total: $<span id="sidebar-total">0.00</span>
+            </div>
+            <div class="cart-buttons">
+                <button onclick="clearCart()" class="cta-button secondary-btn">Clear Cart</button>
+                <a href="checkout.html" class="cta-button">Go to Checkout</a>
+            </div>
+        </aside>
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Test - NurturePath Lactation Services</title>
+    <!-- Links to your existing stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Network Connection Test</h1>
+    </header>
+    
+    <nav>
+        <a href="index.html">Homepage</a>
+        <a href="services.html">Consultations & Services</a>
+        <a href="shop.html">Shop Supplies</a>
+        <a href="checkout.html">Checkout</a>
+        <!-- Optional: Added a link to this test page so you can easily navigate to it -->
+        <a href="network-test.html">Network Test</a>
+    </nav>
+
+    <main class="container">
+        <h2>System Telemetrics</h2>
+        
+        <div class="form-section">
+            <h3 style="margin-bottom: 20px;">Current Connection Data</h3>
+            
+            <div style="font-size: 1.1rem; line-height: 2;">
+                <p><strong>Local Host Name:</strong> <span id="host-name" style="color: var(--deep-calming-teal);">Detecting...</span></p>
+                <p><strong>Current Communication Port:</strong> <span id="comm-port" style="color: var(--deep-calming-teal);">Detecting...</span></p>
+                <p><strong>Current Transmission Protocol:</strong> <span id="protocol" style="color: var(--deep-calming-teal);">Detecting...</span></p>
+                <p><strong>Last Time Launched:</strong> <span id="last-launched" style="color: var(--deep-calming-teal);">Detecting...</span></p>
+            </div>
+        </div>
+    </main>
+
+    <footer style="text-align: center; padding: 30px; margin-top: 20px; background-color: #ffffff; box-shadow: 0 -2px 10px rgba(0,0,0,0.02);">
+        <small style="color: #777;">The website will be built using standard front-end web technologies including HTML, CSS, and JavaScript.</small>
+    </footer>
+
+    <!-- JavaScript to dynamically pull connection telemetry -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Get Local Host Name (e.g., 127.0.0.1 or localhost)
+            const hostName = window.location.hostname || "Local File";
+            document.getElementById('host-name').textContent = hostName;
+
+            // 2. Get Current Communication Port (e.g., 5500)
+            const port = window.location.port || "None (Default)";
+            document.getElementById('comm-port').textContent = port;
+
+            // 3. Get Current Transmission Protocol (e.g., HTTP)
+            // .replace(':', '') removes the colon from 'http:' and .toUpperCase() capitalizes it
+            const protocol = window.location.protocol.replace(':', '').toUpperCase();
+            document.getElementById('protocol').textContent = protocol;
+
+            // 4. Get Last Time Launched using localStorage
+            const lastLaunchedEl = document.getElementById('last-launched');
+            const storedTime = localStorage.getItem('nurtureLastLaunch');
+
+            // If a previous time was saved, display it. Otherwise, display the first launch message.
+            if (storedTime) {
+                lastLaunchedEl.textContent = storedTime;
+            } else {
+                lastLaunchedEl.textContent = "First Launch - Welcome!";
+            }
+
+            // Immediately set the current date and time in localStorage for the NEXT time the page is refreshed/launched
+            const currentTime = new Date().toLocaleString();
+            localStorage.setItem('nurtureLastLaunch', currentTime);
+        });
+    </script>
+</body>
+</html>

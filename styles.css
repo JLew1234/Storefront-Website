@@ -1,0 +1,389 @@
+/* --- Brand Theme Colors --- */
+:root {
+    --soft-cream: #FCFAFA;
+    --warm-blush-pink: #F4BFB6;
+    --deep-calming-teal: #005C53;
+    --charcoal-gray: #333333;
+}
+/* Add this right below your :root colors */
+* {
+    box-sizing: border-box;
+}
+
+/* --- General Layout & Typography --- */
+body {
+    background-color: var(--soft-cream);
+    color: var(--charcoal-gray);
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: var(--deep-calming-teal);
+    color: var(--soft-cream);
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+}
+
+nav {
+    background-color: #ffffff;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav a {
+    color: var(--deep-calming-teal);
+    margin: 0 20px;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--warm-blush-pink);
+}
+
+main h1, main h2, main h3 {
+    color: var(--deep-calming-teal);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.container {
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* --- Buttons --- */
+.cta-button {
+    background-color: var(--warm-blush-pink);
+    color: var(--charcoal-gray);
+    border: none;
+    padding: 12px 25px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 30px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.cta-button:hover {
+    background-color: #e5aaa1;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* --- Modern Product Cards --- */
+.product-grid {
+    display: grid;
+    /* This rule ensures it automatically adapts to phone screens without overlapping */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px; /* Increased the gap to create a massive, clear divide */
+    margin-top: 20px;
+    width: 100%;
+}
+
+.product-card {
+    background-color: #ffffff;
+    padding: 25px;
+    
+    /* NEW: Added a solid border to clearly separate every single item */
+    border: 2px solid var(--deep-calming-teal); 
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    /* Flexbox layout to align buttons */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden; /* Prevents any text or images from spilling out of the card */
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,92,83,0.15);
+}
+
+.product-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.product-card .cta-button {
+    margin-top: auto; 
+    align-self: center;
+    width: 100%; /* Expanding to 100% ensures it looks identical on mobile and desktop */
+}
+
+.product-card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    /* NEW: Flexbox layout to align buttons */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.product-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* NEW: Pushes the button to the bottom of the card */
+.product-card .cta-button {
+    margin-top: auto; 
+    align-self: center;
+    width: 80%; /* Makes the buttons a uniform width */
+}
+
+/* --- Form Styling --- */
+.form-section {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--deep-calming-teal);
+}
+
+.form-group input, .form-group textarea {
+    padding: 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    background-color: #fafafa;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: var(--deep-calming-teal);
+    background-color: #ffffff;
+}
+
+.coupon-section {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.total-display {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--deep-calming-teal);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* --- Brochure Links --- */
+.brochure-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.brochure-link {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--deep-calming-teal);
+    color: var(--soft-cream);
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.brochure-link:hover {
+    background-color: #00453e;
+    transform: translateY(-2px);
+}
+
+/* --- Toast Notification --- */
+.toast-notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--deep-calming-teal);
+    color: var(--soft-cream);
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    z-index: 1000;
+    font-weight: bold;
+    animation: fadeInOut 3s forwards;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translateY(20px); }
+    15% { opacity: 1; transform: translateY(0); }
+    85% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(20px); }
+}
+/* --- Smart Cart UI Styles --- */
+.shop-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.products-section {
+    flex: 2;
+    min-width: 300px;
+}
+
+.cart-sidebar {
+    flex: 1;
+    min-width: 250px;
+    background-color: #ffffff;
+    padding: 20px;
+    border: 2px solid var(--deep-calming-teal);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 80px; /* Keeps the cart visible as user scrolls */
+}
+
+.cart-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 0.9rem;
+}
+
+.cart-controls {
+    margin-top: 5px;
+}
+
+.cart-controls button {
+    background-color: var(--soft-cream);
+    border: 1px solid var(--deep-calming-teal);
+    border-radius: 4px;
+    padding: 2px 8px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    margin-right: 5px;
+}
+
+.cart-controls button:hover {
+    background-color: var(--warm-blush-pink);
+}
+
+.cart-total-box {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--deep-calming-teal);
+    text-align: right;
+    margin: 15px 0;
+}
+
+.cart-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.secondary-btn {
+    background-color: #e0e0e0;
+    color: var(--charcoal-gray);
+}
+
+.secondary-btn:hover {
+    background-color: #ccc;
+}
+
+.disabled-btn {
+    background-color: #ccc !important;
+    cursor: not-allowed !important;
+    color: #666 !important;
+    box-shadow: none !important;
+    transform: none !important;
+}
+
+.stock-info {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.tiny-btn {
+    padding: 5px 10px;
+    background-color: var(--soft-cream);
+    border: 1px solid #ccc;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-left: 5px;
+}
+.tiny-btn:hover { background-color: #ddd; }
+.tiny-btn.danger { background-color: #ff4c4c; color: white; border: none;}
+.tiny-btn.danger:hover { background-color: #e60000; }
+
+.success-message {
+    text-align: center;
+    padding: 30px;
+    background-color: #f0fff0;
+    border: 2px solid green;
+    border-radius: 12px;
+}
+/* --- Direct Link Blue Highlight --- */
+.highlight-blue {
+    box-shadow: 0 0 25px rgba(0, 123, 255, 0.5) !important;
+    border: 2px solid #007bff !important;
+    background-color: #f0f8ff !important; /* A very soft blue background */
+    transform: scale(1.02); /* Slightly enlarges it to draw attention */
+}
+
+/* Update the existing product card transition to handle the fade effect smoothly */
+.product-card {
+    transition: transform 0.5s ease, box-shadow 0.5s ease, background-color 0.5s ease, border-color 0.5s ease !important;
+}
